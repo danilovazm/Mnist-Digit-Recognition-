@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 import torch.optim as optim
 
@@ -10,8 +11,11 @@ def Train(epochs, lr, Net, train_set, device):
         Net.train()
         totalLoss = 0
         for iter, (x, y) in enumerate(train_set):
-            predicted = Net(x.cuda())
-            loss = Loss(predicted, y.cuda())
+            if torch.cuda.is_available():
+                x = x.cuda()
+                y = y.cuda()
+            predicted = Net(x)
+            loss = Loss(predicted, y)
             Net.zero_grad()
             optimizer.zero_grad()
             loss.backward()
