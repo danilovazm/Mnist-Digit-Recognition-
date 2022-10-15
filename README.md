@@ -48,10 +48,10 @@ Also, when running the Main.py file, is possible to fit some methods' parameters
 `--lr`: Choose the learning rate you want to use, default `0.0001`. (optional)
 
 ## Results
-<!---
+
 <div align="center">
-<img src="SVM.png" width="300"/>
-<img src="RF.png" width="300" hspace="10px"/>
-<img src="DT.png" width="300"/>
+<img src="result.png"/>
 </div>
---->
+<div align="center">
+<h3> Accuracy of 98,4% obtained </h3>
+</div>
