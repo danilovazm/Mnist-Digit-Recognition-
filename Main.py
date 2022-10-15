@@ -5,6 +5,7 @@ from Network import cnn
 from train import Train
 from test import Test
 import matplotlib.pyplot as plt
+import warnings
 
 def plotChart():
     plt.show()
@@ -22,6 +23,7 @@ def main(args):
     plt.plot(train_losses, color='blue')
     plotChart()
     ax = Test(Net, test_set)
+    plt.savefig('result.png')
     plotChart()
 
 if __name__ == "__main__":
@@ -30,4 +32,5 @@ if __name__ == "__main__":
     parser.add_argument('--lr', type=float, default=1e-4)
 
     args = parser.parse_args()
+    warnings.filterwarnings("ignore")
     main(args)
